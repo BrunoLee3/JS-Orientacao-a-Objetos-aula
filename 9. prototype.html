@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //todos são filhos de Object.prototype
+
+        //objeto literal
+        let aviao1 = {
+            cor: 'Branco',
+            modelo: 'Airbus a380',
+            levantarVoo: function(){ console.log('levantar voo') }
+        }
+
+        //funcao construtora
+        AviaoF = function(){
+            this.cor = "azul",
+            this.modelo = 'Boing 787',
+            this.levantarVoo = function(){ console.log('levantar voo') }
+        }
+
+        let aviao2 = new AviaoF()
+
+        //classe
+        class AviaoC{
+            constructor(){
+                this.cor = 'vemelho'
+                this.modelo = 'Embrear E-Jets'
+            }
+
+            levantarVoo(){ console.log('levantar voo') }
+        }
+
+        let aviao3 = new AviaoC
+
+        console.log(aviao1, aviao2, aviao3)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

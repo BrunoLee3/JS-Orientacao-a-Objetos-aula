@@ -1,0 +1,17 @@
+input{
+    margin: 2px;
+}
+
+#nome, #profissao{
+    width: 22.5em;
+}
+
+input[type="submit"]{
+    position: relative;
+    float: right;
+}
+
+div{
+    /* border: 1px solid blue; */
+    width: 25em;
+}

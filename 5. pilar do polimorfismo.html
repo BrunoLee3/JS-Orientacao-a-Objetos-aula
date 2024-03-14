@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //o 'super()' fornece à classe filha acesso ao constructor da classe pai
+        //o 'super()' pode passar parametros ao construtor da classe pai
+        class Animal{
+            constructor(cor, tamanho, peso){
+                this.cor = cor
+                this.tamanho = tamanho 
+                this.peso = peso
+            }
+
+            dormir(){
+                console.log('dormir')
+            }
+        }
+
+        class Passaro extends Animal{
+            constructor(bico, cor, tamanho, peso){
+                super(cor, tamanho, peso)
+                this.bico = bico
+            }
+
+            voar(){
+                console.log('voar')
+            }
+        }
+
+        class Papagaio extends Passaro{
+            constructor(bico, sabeFalar, cor, tamanho, peso){
+                super(bico, cor, tamanho, peso)
+                this.sabeFalar = sabeFalar
+            }
+
+            falar(){
+                console.log('falar')
+            }
+        }
+
+        class Avestruz extends Passaro{
+            constructor(){
+                super('grande', 'branco e preto', 250, 15000)
+            }
+
+            EnterrarCabeça(){
+                console.log('enterrar cabeça')
+            }
+
+            //sobrescreve o método voar da classe pássaro
+            voar(){
+                return false
+            }
+        }
+
+        let papagaio = new Papagaio('medio', true, 'verde e amarelo', 27, 350)
+        console.log(papagaio)
+
+        let avestruz = new Avestruz()
+        console.log(avestruz)
+        avestruz.voar()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

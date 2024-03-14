@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formulario.css">
+    <script>
+        let nome = 'jorge'
+        let idade = 28
+        let sexo = 'Masculino'
+        let profissao = 'dev'
+
+        let objeto = {
+            nome: nome,
+            idade: idade,
+            sexo: sexo,
+            profissao: profissao,
+            ExibirResumo: function(){
+                console.log(`${this.nome}, ${this.idade} anos, ${this.sexo}, ${this.profissao}`)
+            }
+        }
+
+        console.log(objeto)
+        objeto.ExibirResumo()
+
+        let objeto2 = {
+            nome,
+            idade,
+            sexo,
+            profissao,
+            ExibirResumo(){
+                console.log(`${this.nome}, ${this.idade} anos, ${this.sexo}, ${this.profissao}`)
+            }
+        }
+
+        console.log(objeto)
+        objeto.ExibirResumo()
+    </script>
+</head>
+<body>
+
+    <div>
+        <table>
+            <form id="form">
+                <tr>
+                    <td>Nome:</td>
+                    <td><input type="text" name="Nome" id="nome"> <br></td>
+                </tr>
+                <tr>
+                    <td>Idade:</td>
+                    <td>
+                        <input type="text" name="Idade" id="idade">
+                        Sexo:
+                        <select name="Sexo" id="sexo">
+                            <option value="">Selecione</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select> 
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td>Profissão:</td>
+                    <td><input type="text" name="Profissao" id="profissao"></td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><span></span></td>
+                    <td><button type="button" onclick="enviarForm()">Enviar</button></td>
+                </tr>
+            </form>
+        </table>
+    </div>
+    
+</body>
+</html>
